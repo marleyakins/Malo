@@ -1,0 +1,25 @@
+include "stdio.h"
+
+typdef from Exception {
+	string output;
+
+	int __thrown__(this) {
+		puts(this.output);
+	}
+} InputError;
+
+int main (string argv[]) {
+	try {
+		stdio.print("Hello World!");
+	} except {
+		puts("Could not find stdio.h");
+	} 
+
+	if(len(argv) < 1) {
+		throw InputError("Expected some input.");
+	} else {
+		puts(argv[1]);
+	}
+
+	return 0;
+}
