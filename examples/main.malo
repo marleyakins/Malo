@@ -1,6 +1,6 @@
 include "stdio.h"
 
-typdef from Exception {
+typedef from Exception {
 	string output;
 
 	int __thrown__(this) {
